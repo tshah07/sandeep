@@ -18,7 +18,7 @@ class User extends CI_Controller {
 	}
 
 	public function getUser($value = '') {
-		$data['gridData'] = $this -> db -> get('user') -> result_array();
+		$data['gridData'] = $this -> db ->limit(30)-> get('quickDraw') -> result_array();
 		$this -> load -> view('grid', $data);
 		$this -> load -> view('footer');
 	}
